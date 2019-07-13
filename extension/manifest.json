@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "YouTubeMP3Extension",
+    "description": "Download an MP3 from YouTube",
+    "version": "1",
+    "author": "Lior Yardeni",
+   "browser_action": {
+      "default_icon": "jenkins.png",
+      "default_title": "Download an mp3 of this video",
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["popup.js"]
+        }
+    ]
+   }
